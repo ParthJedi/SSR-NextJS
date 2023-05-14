@@ -1,13 +1,13 @@
-import Head from "next/head";
+import Navbar from "../components/Navbar/Navbar";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "The Nothing App",
+  title: "The Everything App",
   description: "The Technology For Tomorrow manifested Today",
-  keywords: "IT, Web3, Social, Finance, Edge Technolgy Labs, Security, Society"
+  keywords: "IT, Web3, Social, Agriculture, Finance, Edge Technolgy Labs, Security, Society",
 };
 
 export default function RootLayout({
@@ -17,7 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }

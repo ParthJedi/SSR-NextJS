@@ -1,0 +1,13 @@
+.navbar {
+  background-color: black;
+  color: white;
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: row;
+}
+
+.navLinks li {
+    margin: 1em;
+}
