@@ -1,3 +1,5 @@
+import ArticleList from "@/components/ArticleList/ArticleList";
+
 export default async function Home() {
   const res = await fetch(
     "https://jsonplaceholder.typicode.com/posts?_limit=8"
@@ -11,18 +13,7 @@ export default async function Home() {
         <h1>Getting started with Next.js V13</h1>
         <p>Hello, Next.js!</p>
       </div>
-      <div>
-        {posts.length &&
-          posts.map((post: any) => {
-            return (
-              <div key={post.id}>
-                <h3>{post.title}</h3>
-                <p>{post.body}</p>
-              </div>
-            );
-          })}
-        <h3></h3>
-      </div>
+      <div>{posts.length && <ArticleList posts={posts} />}</div>
     </main>
   );
 }
