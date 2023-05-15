@@ -1,12 +1,12 @@
 import ArticleCard from "../ArticleCard/ArticleCard";
-export default function ArticleList({ posts }: any): JSX.Element {
+export default function ArticleList({ articles }: any): JSX.Element {
   return (
     <div>
-      {posts.length &&
-        posts.map((post: any) => {
+      {articles.length &&
+        articles.map((article: any) => {
           return (
             <>
-              <ArticleCard post={post} />
+              <ArticleCard article={article} />
             </>
           );
         })}

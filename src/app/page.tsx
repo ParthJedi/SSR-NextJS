@@ -5,7 +5,7 @@ export default async function Home() {
     "https://jsonplaceholder.typicode.com/posts?_limit=8"
   );
   if (!res.ok) throw "Error loading posts";
-  const posts = await res.json();
+  const articles = await res.json();
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -13,7 +13,7 @@ export default async function Home() {
         <h1>Getting started with Next.js V13</h1>
         <p>Hello, Next.js!</p>
       </div>
-      <div>{posts.length && <ArticleList posts={posts} />}</div>
+      <div>{articles.length && <ArticleList articles={articles} />}</div>
     </main>
   );
 }

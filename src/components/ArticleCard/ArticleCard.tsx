@@ -1,14 +1,20 @@
 import Link from "next/link";
 
-function ArticleCard({ post }: any): JSX.Element {
+function ArticleCard({ article }: any): JSX.Element {
   return (
     <>
-      {post && (
+      {article && (
         <>
           {
-            <Link href="/post/[id]" as={`/post/${post.id}`}>
+            <Link
+              href={{
+                pathname: "/article/[id]",
+                query: article.id,
+              }}
+              as={`/article/${article.id}`}
+            >
               <div
-                key={post.id}
+                key={article.id}
                 style={{
                   marginTop: "1em",
                   textAlign: "center",
@@ -16,8 +22,8 @@ function ArticleCard({ post }: any): JSX.Element {
                   color: "white",
                 }}
               >
-                <h3 style={{ fontWeight: "bold" }}>{post.title}</h3>
-                <p>{post.body}</p>
+                <h3 style={{ fontWeight: "bold" }}>{article.title} &rarr;</h3>
+                <p>{article.body}</p>
               </div>
             </Link>
           }
