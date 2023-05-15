@@ -1,7 +1,14 @@
-function Article({ params }: any) {
+async function Article({ params }: any) {
   const { id } = params;
 
-  return <div>Article {id}</div>;
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+  const article = await res.json();
+
+  return (
+    <>
+      <div>Article {id}</div>
+    </>
+  );
 }
 
 export default Article;
